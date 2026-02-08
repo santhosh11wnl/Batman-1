@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Batman-Themed Portfolio Website
 
-## Getting Started
+An ultra-modern, cinematic portfolio website for **Ijaz Ahammad Shaik** with a Batman/Gotham aesthetic. Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
 
-First, run the development server:
+## 🦇 Features
 
+- **Cinematic Design**: Dark Gotham aesthetic with bat-signal yellow accents
+- **Smooth Animations**: Framer Motion for page transitions and micro-interactions
+- **Responsive**: Mobile-first design that works on all devices
+- **Accessible**: Keyboard navigation, focus rings, and semantic HTML
+- **Performance Optimized**: Code splitting and optimized images
+- **Modern Stack**: Next.js 15, TypeScript, Tailwind CSS
+
+## 🚀 Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui (Radix UI + Tailwind)
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Fonts**: Inter + Space Grotesk
+
+## 📦 Installation
+
+1. **Install dependencies**:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run development server**:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Open browser**:
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Build for Production
 
-## Learn More
+```bash
+# Build the application
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Start production server
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚢 Deploy to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The easiest way to deploy is using [Vercel](https://vercel.com):
 
-## Deploy on Vercel
+1. Push your code to GitHub
+2. Import your repository on Vercel
+3. Vercel will automatically detect Next.js and deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or use the Vercel CLI:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm install -g vercel
+vercel
+```
+
+## 📁 Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── globals.css          # Global styles with Batman theme
+│   ├── layout.tsx            # Root layout with fonts
+│   ├── page.tsx              # Main page
+│   └── not-found.tsx         # Custom 404 page
+├── components/
+│   ├── ui/                   # shadcn/ui components
+│   │   ├── button.tsx
+│   │   └── card.tsx
+│   ├── layout/               # Layout components
+│   │   ├── Navbar.tsx
+│   │   └── Footer.tsx
+│   └── sections/             # Page sections
+│       ├── Hero.tsx
+│       ├── About.tsx
+│       ├── Skills.tsx
+│       ├── Experience.tsx
+│       ├── Projects.tsx
+│       └── Contact.tsx
+├── data/
+│   └── content.ts            # Portfolio content data
+├── lib/
+│   └── utils.ts              # Utility functions
+└── public/                   # Static assets
+```
+
+## 🎨 Design System
+
+### Colors
+- **Background**: Near-black (#07080B, #0A0B10)
+- **Accent**: Bat-signal yellow (#F5C542, #FFCC33)
+- **Steel Blue**: Muted highlights (#3A4A5A)
+
+### Typography
+- **Sans**: Inter (body text)
+- **Display**: Space Grotesk (headings)
+
+### Effects
+- Glassmorphism panels
+- Neon edge glow on hover
+- Subtle parallax scrolling
+- Animated spotlight (bat-signal)
+- Film grain texture
+
+## 📝 Customization
+
+### Update Content
+Edit `/data/content.ts` to update:
+- Personal information
+- Experience
+- Projects
+- Skills
+- Awards
+
+### Modify Theme
+Edit `/app/globals.css` and `/tailwind.config.ts` to customize:
+- Colors
+- Fonts
+- Animations
+- Spacing
+
+## ♿ Accessibility
+
+- Semantic HTML structure
+- Keyboard navigation support
+- Focus visible indicators
+- ARIA labels where needed
+- Respects `prefers-reduced-motion`
+
+## 📱 Responsive Breakpoints
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## 🧪 Testing
+
+Run tests with Jest:
+
+```bash
+npm test
+```
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👤 Author
+
+**Ijaz Ahammad Shaik**
+- Email: ijazahamed.cse@gmail.com
+- LinkedIn: [linkedin.com/in/ijazahamed108](https://linkedin.com/in/ijazahamed108)
+- GitHub: [github.com/ijazahamed108](https://github.com/ijazahamed108)
+
+---
+
+Built with 🦇 and ⚡ in Gotham (Hyderabad)
