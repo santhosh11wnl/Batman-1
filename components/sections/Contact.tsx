@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Github, Send } from "lucide-react";
+import { Mail, Linkedin, Github, Instagram, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/data/content";
 
@@ -19,14 +19,25 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
       setTimeout(() => setSubmitStatus("idle"), 3000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -105,6 +116,21 @@ export function Contact() {
                     <div>
                       <p className="text-sm text-muted-foreground">GitHub</p>
                       <p className="font-medium">View my code</p>
+                    </div>
+                  </a>
+
+                  <a
+                    href={personalInfo.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg hover:bg-primary/10 transition-all group"
+                  >
+                    <div className="p-3 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+                      <Instagram className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Instagram</p>
+                      <p className="font-medium">Follow me</p>
                     </div>
                   </a>
                 </div>
@@ -191,6 +217,16 @@ export function Contact() {
                     className="text-center text-primary text-sm"
                   >
                     Message sent successfully! I'll get back to you soon.
+                  </motion.p>
+                )}
+                
+                {submitStatus === "error" && (
+                  <motion.p
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center text-red-500 text-sm"
+                  >
+                    Failed to send message. Please try again.
                   </motion.p>
                 )}
               </form>

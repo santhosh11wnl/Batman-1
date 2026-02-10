@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { personalInfo } from "@/data/content";
 import { BatmanLogo } from "@/components/ui/BatmanLogo";
@@ -34,6 +34,62 @@ export function Hero() {
       
       {/* Animated Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-gotham-darker via-gotham-dark to-gotham-dark" />
+      
+      {/* Thunderbolt Lightning Effect */}
+      <motion.svg
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, 1, 0, 1, 0] }}
+        transition={{
+          duration: 0.4,
+          repeat: Infinity,
+          repeatDelay: 3.6,
+          times: [0, 0.2, 0.4, 0.6, 1],
+        }}
+      >
+        <motion.path
+          d="M 30 0 L 35 30 L 25 30 L 32 60 L 40 35 L 35 35 L 40 0 Z"
+          fill="none"
+          stroke="#00d9ff"
+          strokeWidth="0.3"
+          filter="url(#glow)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: 0.4,
+            repeat: Infinity,
+            repeatDelay: 3.6,
+            times: [0, 0.3, 0.7, 1],
+          }}
+        />
+        <motion.path
+          d="M 65 20 L 70 45 L 62 45 L 68 75 L 75 50 L 70 50 L 73 20 Z"
+          fill="none"
+          stroke="#00d9ff"
+          strokeWidth="0.3"
+          filter="url(#glow)"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
+          transition={{
+            duration: 0.4,
+            repeat: Infinity,
+            repeatDelay: 3.6,
+            times: [0, 0.3, 0.7, 1],
+            delay: 0.1,
+          }}
+        />
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+      </motion.svg>
       
       {/* Floating Batman Logos */}
       <motion.div
@@ -140,6 +196,16 @@ export function Hero() {
                 className="p-3 rounded-lg glass-panel glow-border-hover"
               >
                 <Linkedin className="w-6 h-6" />
+              </motion.a>
+              <motion.a
+                href={personalInfo.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="p-3 rounded-lg glass-panel glow-border-hover"
+              >
+                <Instagram className="w-6 h-6" />
               </motion.a>
               <motion.a
                 href={`mailto:${personalInfo.email}`}

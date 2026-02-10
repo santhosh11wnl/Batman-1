@@ -7,6 +7,7 @@ export const personalInfo = {
   email: "ijazahamed.cse@gmail.com",
   linkedin: "https://in.linkedin.com/in/ijazhamed108?trk=public_profile_browsemap",
   github: "https://github.com/ijazahamed108",
+  instagram: "https://www.instagram.com/ijaz__ahamed/",
 };
 
 export const summary = [
@@ -137,9 +138,74 @@ export const projects = [
 ];
 
 export const awards = [
-  "6× Star of the Sprint",
-  "1× Impactful Award",
-  "Best In Class Award (2025 & 2026)",
+  "Star of the Sprint-Carrier",
+  "Impactful Award-Carrier",
+  "Best In Class Award (2025 & 2026)-Carrier",
+  "Problem Solver-Mintbook",
+  "Performer of the Quarter-BYJU'S"
+];
+
+export const certifications = [
+  {
+    title: "The Complete 2021 Web Development Bootcamp",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-593e6348-b78c-43fc-8206-696a02ea86d5/",
+  },
+  {
+    title: "Web Design for Beginners: Real World Coding in HTML and CSS",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-29d78af9-7565-48ef-8cbc-ff14bdf3143f/",
+  },
+  {
+    title: "JavaScript Basics for Beginners",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-b5929f74-5484-473c-95f3-d1b57903bd5f/",
+  },
+  {
+    title: "AWS Amazon S3 Mastery BootCamp",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-49662fb9-c6da-4e10-a426-bba291ed9a63/",
+  },
+  {
+    title: "Apache Spark 3 - Spark Programming in Python for Beginners",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-36059c04-e3c8-4047-be7a-b7d6f7b9a3f3/",
+  },
+  {
+    title: "AWS Lambda and the Serverless Framework - Hands on Learning",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-657e904f-f0e6-490c-a2fd-8d793cc254bb/",
+  },
+  {
+    title: "SQL Basics For Beginners",
+    platform: "Udemy",
+    url: "https://www.udemy.com/certificate/UC-e5040773-9253-414e-ad8d-88a528520579/",
+  },
+  {
+    title: "Introduction to Git and GitHub",
+    platform: "Coursera",
+    url: "https://www.coursera.org/account/accomplishments/verify/792ADQRBA9NW",
+  },
+  {
+    title: "Technical Support Fundamentals",
+    platform: "Coursera",
+    url: "https://www.coursera.org/account/accomplishments/verify/LBRRGGG24VXL",
+  },
+  {
+    title: "Introduction to Virtual Reality",
+    platform: "Coursera",
+    url: "https://www.coursera.org/account/accomplishments/verify/G7S88ZYKYVQP",
+  },
+  {
+    title: "AWS Fundamentals Going Cloud Native",
+    platform: "Coursera",
+    url: "https://www.coursera.org/account/accomplishments/verify/FMEG37UY9M8D",
+  },
+  {
+    title: "Python Data Structures",
+    platform: "Coursera",
+    url: "https://www.coursera.org/account/accomplishments/verify/Q4FR8HV9WW9B",
+  },
 ];
 
 export const education = [
