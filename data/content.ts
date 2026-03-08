@@ -21,7 +21,7 @@ export const experience = [
     company: "Carrier Technologies Limited",
     logo: "/companyLogos/carrier-logo.svg",
     website: "https://www.carrier.com/commercial/en/in/about/about-carrier-india/",
-    role: "Engineer (Senior Associate)",
+    role: "Senior Engineer",
     location: "Hyderabad",
     period: "Jun 2024 - Present",
     achievements: [
@@ -79,9 +79,10 @@ export const experience = [
     location: "Chennai",
     period: "Nov 2020 - Jun 2021",
     achievements: [
-      "Python data processing scripts for BNY Mellon to cleanse/transform datasets; refactored legacy SQL for performance",
+      "Engineered scalable REST APIs and PySpark data processing scripts for BNY Mellon, automating the cleansing and transformation of massive raw datasets.",
+      "Optimized front-end performance and cross-device responsiveness for the application using React.js and MUI."
     ],
-    tech: ["Python", "SQL"],
+    tech: ["Python", "SQL","Node.js","React"],
   },
 ];
 
@@ -214,7 +215,7 @@ export const education = [
     institution: "Rajeev Gandhi Memorial College of Engineering and Technology (Autonomous)",
     year: "2020",
     gpa: "8.0 GPA",
-    subjects: ["Computer Networks", "Data Structures and Algorithms", "Operating Systems", "Android Programming", "Software Engineering", "DBMS"],
+    subjects: ["Computer Networks", "Data Structures and Algorithms", "Operating Systems", "Android Programming", "Software Engineering", "DBMS", "Object Oriented Analysis and Design", "Computer Graphics", "Compiler Design", "Cloud Infrastructure"],
     leadership: [
       "Member of Technical Committee, RGMCET (2019-2020)",
       "Member of Environment Awareness Team - NSS",
