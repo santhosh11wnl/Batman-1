@@ -9,7 +9,7 @@ import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
-import { Certifications } from "@/components/sections/Certifications";
+import { Publications } from "@/components/sections/Certifications";
 import { Education } from "@/components/sections/Education";
 import { Contact } from "@/components/sections/Contact";
 import { LanguageProvider } from "@/lib/LanguageContext";
@@ -26,7 +26,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Projects />
-        <Certifications />
+        <Publications />
         <Education />
         <Contact />
         <Footer />

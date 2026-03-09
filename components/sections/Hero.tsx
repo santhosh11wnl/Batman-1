@@ -10,6 +10,11 @@ import Image from "next/image";
 
 export function Hero() {
   const t = useTranslation();
+  const handleOpenResume = () => {
+    if (personalInfo.resumeUrl) {
+      window.open(personalInfo.resumeUrl, "_blank", "noopener,noreferrer");
+    }
+  };
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -35,61 +40,10 @@ export function Hero() {
       {/* Animated Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-gotham-darker via-gotham-dark to-gotham-dark" />
       
-      {/* Thunderbolt Lightning Effect */}
-      <motion.svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 0, 1, 0] }}
-        transition={{
-          duration: 0.4,
-          repeat: Infinity,
-          repeatDelay: 3.6,
-          times: [0, 0.2, 0.4, 0.6, 1],
-        }}
-      >
-        <motion.path
-          d="M 30 0 L 35 30 L 25 30 L 32 60 L 40 35 L 35 35 L 40 0 Z"
-          fill="none"
-          stroke="#00d9ff"
-          strokeWidth="0.3"
-          filter="url(#glow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
-          transition={{
-            duration: 0.4,
-            repeat: Infinity,
-            repeatDelay: 3.6,
-            times: [0, 0.3, 0.7, 1],
-          }}
-        />
-        <motion.path
-          d="M 65 20 L 70 45 L 62 45 L 68 75 L 75 50 L 70 50 L 73 20 Z"
-          fill="none"
-          stroke="#00d9ff"
-          strokeWidth="0.3"
-          filter="url(#glow)"
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: [0, 1, 1, 0], opacity: [0, 1, 1, 0] }}
-          transition={{
-            duration: 0.4,
-            repeat: Infinity,
-            repeatDelay: 3.6,
-            times: [0, 0.3, 0.7, 1],
-            delay: 0.1,
-          }}
-        />
-        <defs>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="0.5" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-      </motion.svg>
+      {/* Batman Noir Vignette */}
+      <div className="absolute inset-0 pointer-events-none mix-blend-multiply">
+        <div className="w-full h-full bg-gradient-radial from-black/70 via-transparent to-black/80" />
+      </div>
       
       {/* Floating Batman Logos */}
       <motion.div
@@ -143,14 +97,35 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <div className="relative w-full max-w-3xl mx-auto h-32 mb-6">
-              <Image
-                src="/name.png"
-                alt={personalInfo.name}
-                fill
-                className="object-contain drop-shadow-[0_0_30px_rgba(245,197,66,0.6)]"
-                priority
+            <div className="relative w-full max-w-3xl mx-auto mb-6">
+              {/* Fire glow behind name */}
+              <motion.div
+                className="absolute inset-x-0 -bottom-4 h-10 blur-3xl"
+                style={{
+                  background:
+                    "radial-gradient(circle at 50% 0%, rgba(255,140,0,0.9), transparent 60%)",
+                }}
+                animate={{ opacity: [0.4, 1, 0.6] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "mirror" }}
               />
+              <motion.h1
+                className="relative text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-amber-100 via-amber-300 to-red-700 drop-shadow-[0_0_30px_rgba(245,197,66,0.9)]"
+                animate={{
+                  textShadow: [
+                    "0 0 12px rgba(255,180,80,0.7), 0 0 30px rgba(255,80,0,0.4)",
+                    "0 0 20px rgba(255,220,120,0.9), 0 0 40px rgba(255,120,40,0.7)",
+                    "0 0 10px rgba(255,160,60,0.6), 0 0 25px rgba(255,60,0,0.5)",
+                  ],
+                  y: [0, -1.5, 0],
+                }}
+                transition={{
+                  duration: 2.4,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                }}
+              >
+                {personalInfo.name}
+              </motion.h1>
             </div>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-4">
@@ -173,6 +148,13 @@ export function Hero() {
                 onClick={() => scrollToSection("contact")}
               >
                 {t.hero.contactMe}
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={handleOpenResume}
+              >
+                Download Resume
               </Button>
             </div>
 

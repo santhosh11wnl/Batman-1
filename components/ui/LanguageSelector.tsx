@@ -5,11 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Globe, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageContext";
 
-const languages = [
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "te", name: "తెలుగు", flag: "🇮🇳" },
-  { code: "hi", name: "हिंदी", flag: "🇮🇳" },
-];
+const languages = [{ code: "en", name: "English" }];
 
 export function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +22,7 @@ export function LanguageSelector() {
         className="flex items-center gap-2 px-4 py-2 glass-panel glow-border rounded-lg hover:border-primary/40 transition-all"
       >
         <Globe className="w-4 h-4 text-primary" />
-        <span className="text-sm font-medium">{currentLang?.flag}</span>
+        <span className="text-sm font-medium">{currentLang?.name}</span>
         <ChevronDown
           className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`}
         />
@@ -61,7 +57,6 @@ export function LanguageSelector() {
                     language === lang.code ? "bg-primary/10 text-primary" : ""
                   }`}
                 >
-                  <span className="text-2xl">{lang.flag}</span>
                   <span className="text-sm font-medium">{lang.name}</span>
                   {language === lang.code && (
                     <motion.div
