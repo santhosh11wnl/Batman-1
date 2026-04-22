@@ -1,6 +1,6 @@
 # Batman-Themed Portfolio Website
 
-An ultra-modern, cinematic portfolio website for **Ijaz Ahammad Shaik** with a Batman/Gotham aesthetic. Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
+An ultra-modern, cinematic portfolio website with a Batman/Gotham aesthetic. Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
 
 ## 🦇 Features
 
@@ -22,7 +22,6 @@ An ultra-modern, cinematic portfolio website for **Ijaz Ahammad Shaik** with a B
 - **Fonts**: Inter + Space Grotesk
 
 ## 📦 Installation
-
 1. **Install dependencies**:
 ```bash
 npm install
@@ -152,13 +151,6 @@ npm test
 
 This project is open source and available under the MIT License.
 
-## 👤 Author
-
-**Ijaz Ahammad Shaik**
-- Email: ijazahamed.cse@gmail.com
-- LinkedIn: [linkedin.com/in/ijazahamed108](https://linkedin.com/in/ijazahamed108)
-- GitHub: [github.com/ijazahamed108](https://github.com/ijazahamed108)
-
 ---
 
-Built with 🦇 and ⚡ in Gotham (Hyderabad)
+Built with 🦇 and ⚡ in Gotham 

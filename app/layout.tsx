@@ -2,13 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Ijaz Ahammad Shaik | Full-Stack Engineer",
-  description: "Full-Stack / Backend-leaning Engineer specializing in React, AWS Serverless, Node.js, and performance optimization. Building scalable solutions with modern technologies.",
-  keywords: ["Full-Stack Developer", "AWS", "React", "Node.js", "TypeScript", "Software Engineer"],
-  authors: [{ name: "Ijaz Ahammad Shaik" }],
+  title: "RAMA PAVAN NAGA SAI SANTHOSH KATRAGADDA | Full-Stack Developer & GenAI Engineer",
+  description:
+    "Full-Stack Developer (Python/Django, React/Next.js) and GenAI/ML Engineer with 5 years of experience building scalable web platforms, AI-powered applications, and data-intensive systems.",
+  keywords: [
+    "Full-Stack Developer",
+    "Python",
+    "Django",
+    "React",
+    "Next.js",
+    "GenAI",
+    "Machine Learning",
+    "LLMs",
+    "RAG",
+  ],
+  authors: [{ name: "RAMA PAVAN NAGA SAI SANTHOSH KATRAGADDA" }],
   openGraph: {
-    title: "Ijaz Ahammad Shaik | Full-Stack Engineer",
-    description: "Full-Stack / Backend-leaning Engineer specializing in React, AWS Serverless, and Node.js",
+    title: "RAMA PAVAN NAGA SAI SANTHOSH KATRAGADDA | Full-Stack Developer & GenAI Engineer",
+    description:
+      "Full-Stack Developer and GenAI/ML Engineer specializing in Python/Django, React/Next.js, and LLM-powered systems.",
     type: "website",
   },
 };

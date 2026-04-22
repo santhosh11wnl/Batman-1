@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,16 +16,19 @@ export function Navbar() {
   const { language } = useLanguage();
   const t = translations[language].nav;
 
-  const navItems = [
-    { name: t.home, href: "#home" },
-    { name: t.about, href: "#about" },
-    { name: t.skills, href: "#skills" },
-    { name: t.experience, href: "#experience" },
-    { name: t.projects, href: "#projects" },
-    { name: "Certifications", href: "#certifications" },
-    { name: t.education, href: "#education" },
-    { name: t.contact, href: "#contact" },
-  ];
+  const navItems = useMemo(
+    () => [
+      { name: t.home, href: "#home" },
+      { name: t.about, href: "#about" },
+      { name: t.skills, href: "#skills" },
+      { name: t.experience, href: "#experience" },
+      { name: t.projects, href: "#projects" },
+      { name: t.publications, href: "#publications" },
+      { name: t.education, href: "#education" },
+      { name: t.contact, href: "#contact" },
+    ],
+    [t]
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +49,7 @@ export function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -73,7 +76,9 @@ export function Navbar() {
             className="flex items-center gap-2"
           >
             <BatmanLogo className="w-8 h-8 text-primary" />
-            <span className="text-xl font-display font-bold text-primary">IAS</span>
+            <span className="text-xl font-display font-bold text-primary">
+              Santhosh
+            </span>
           </motion.div>
 
           {/* Desktop Navigation */}
